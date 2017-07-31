@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>
+		Ejercicio JS
+	</title>
+</head>
+<body>
+<script>
+	//practica en javascript
+	//juego en donde checa el puntaje mayor obtenido de una persona, con la siguiente operacion
+	//altura + (edad * 5)
+
+	function obtenerNumeroRandom(min,max)
+	{
+		return Math.floor(Math.random() * (max - min) +min); 
+	}
+
+	function obtenerResultado(edad, altura)
+	{
+		return altura + (edad * 5);
+	}
+
+	function logProppiedad(person)
+	{
+		console.log("altura: " + person.altura);
+		console.log("edad: " + person.edad);
+	}
+	var person1 = {edad: obtenerNumeroRandom(10,20), altura:obtenerNumeroRandom(100,200) };
+	var person2 = {edad: obtenerNumeroRandom(10,20), altura:obtenerNumeroRandom(100,200) };
+	var person3 = {edad: obtenerNumeroRandom(10,20), altura:obtenerNumeroRandom(100,200) };
+
+	var alex, george, abe;
+
+	alex = obtenerResultado(person1.edad, person1.altura);
+	george = obtenerResultado(person2.edad, person2.altura);
+	abe = obtenerResultado(person3.edad, person3.altura);
+
+	if(alex > george && alex > abe)
+	{
+		console.log("El ganador es alex ---> puntaje: " + alex);
+		console.log("Perdedores ----> george: " + george + " -- abe: " + abe);
+	}
+	else if(george > alex && george > abe)
+	{
+		console.log("El ganador es george ---> puntaje: " + george);
+		console.log("Perdedores ----> abe: " + abe + " -- alex: " + alex);
+	}
+	else if(abe > alex && abe > george)
+	{
+		console.log("El ganador es abe ---> puntaje: " + abe);
+		console.log("Perdedores ----> george: " + george + " -- alex: " + alex);
+	}
+</script>	
+</body>
+</html>
